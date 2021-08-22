@@ -1,12 +1,7 @@
 // Assignment code here
 // Password Prompt Functions
-var passwordLength = window.prompt("Input a length for your password that is between 8 and 128", "10") {
-  if (passwordLength < 8) or if (passwordLength > 128) {
-    window.alert("Invalid input: Password must be between 8 and 128 characters");
-    else console.log passwordLength;
-    
-  }
-}
+
+
 // verify that the user's value is between 8 and 128
 
 // Get references to the #generate element
