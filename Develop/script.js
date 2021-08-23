@@ -20,25 +20,21 @@ function writePassword() {
 
 
     // prompt #1: password length 
-    function passwordLength() {
-      var passwordLength = Number(window.prompt("Input your desired password length (equal to or between 8 and 128)", "10"));
+    function passwordLength(number) {
+      window.prompt("Input your desired password length (equal to or between 8 and 128)", "10");
       if (passwordLength >= 8 && passwordLength <= 128) {
         var lowercase = window.prompt("Do you want lowercase letters?");
         if (lowercase) {
-          window.alert("Lowercase letters will be added to your password.")
-        };
-        // else {
-        window.alert("Lowercase letters will not be added to your password.")
+          window.alert("Lowercase letters will be added to your password.");
+        } else {
+        window.alert("Lowercase letters will not be added to your password.");
       }
-      else {
+     } else {
         window.alert("Invalid input: Password must be between 8 and 128 characters");
         passwordLength();
       }
-     }
-
-
-
-      ;
+     
+      
       var passwordText = document.querySelector("#password");
 
 
@@ -50,14 +46,4 @@ function writePassword() {
 
 
       // Add event listener to generate button; runs writePassword function 
-      generate.addEventListener(click, writePassword());
-
-
-
-
-
-
-
-
-
-
+    generateBtn.addEventListener("click", writePassword() )
