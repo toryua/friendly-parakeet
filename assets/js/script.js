@@ -16,11 +16,11 @@ function writePassword() {
   // generate the password to be called by the parent writePassword function. 
 
 
-  var password = generatePassword(
+  var password = generatePassword() {
 
 
     // prompt #1: password length 
-    function passwordLength(number) {
+    passwordLength(number) {
       window.prompt("Input your desired password length (equal to or between 8 and 128)", "10");
       if (passwordLength >= 8 && passwordLength <= 128) {
         var lowercase = window.prompt("Do you want lowercase letters?");
@@ -42,8 +42,8 @@ function writePassword() {
 
       passwordText.value = password;
 
-
-
+    };
+  
 
       // Add event listener to generate button; runs writePassword function 
-    generateBtn.addEventListener("click", writePassword() )
+    generateBtn.addEventListener("click", writePassword)};
