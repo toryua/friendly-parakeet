@@ -19,14 +19,20 @@ function writePassword() {
 
   function generatePassword() {
     console.log("generate password is called");
+    var passwordCharacters = [];
+
 
     // prompt #1: password length 
-    function passwordLength() {
+    function passwordInput() {
       var pLength = window.prompt("Input your desired password length (equal to or between 8 and 128)", "10");
       if (pLength >= 8 && pLength <= 128) {
         var lowercase = window.confirm("Do you want lowercase letters?");
         if (lowercase) {
           window.alert("Lowercase letters will be added to your password.");
+          var loCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+          console.log(loCase);
+          passwordCharacters = passwordCharacters.concat(loCase);
+          console.log(passwordCharacters);
         } else {
           window.alert("Lowercase letters will not be added to your password.");
         }
@@ -35,33 +41,67 @@ function writePassword() {
           var upperCase = window.confirm("Do you want uppercase letters?");
           if (upperCase) {
             window.alert("Uppercase letters will be added to your password.");
+            var upCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+            passwordCharacters = passwordCharacters.concat(upCase);
+            console.log(passwordCharacters);
           } else {
             window.alert("Uppercase letters will not be added to your password.");
           }
 
           // ask user if they want special characters
-          var spChar = window.confirm("Do you want special characters?");
-          if (spChar) {
+          var specialChar = window.confirm("Do you want special characters?");
+          if (specialChar) {
             window.alert("Special characters will be added to your password.");
+            var spChar = ["%", "!", "$", "#", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ".", "?", "@", "[", "]"]; 
+            passwordCharacters = passwordCharacters.concat(spChar);
+            console.log(passwordCharacters);
           } else {
             window.alert("Special characters will not be added to your password.");
           }
 
+          // ask user if they want numberss
+          var numbers = window.confirm("Do you want numbers?");
+          if (numbers) {
+            window.alert("Numberss will be added to your password.");
+            var num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]; 
+            passwordCharacters = passwordCharacters.concat(num);
+            console.log(passwordCharacters);
+          } else {
+            window.alert("Numbers will not be added to your password.");
+          }
+
+
+
+          
+
+            
+
+
+
       } else {
         window.alert("Invalid input: Password must be between 8 and 128 characters");
-        passwordLength();
+        passwordInput();
       }
 
 
       var passwordText = document.querySelector("#password");
+      var passwordIndex;
 
-
+      for (let i =0; i < pLength; i++) {
+        var maxValue = passwordCharacters.length;
+        var minValue = 0;
+        function getPassword() {
+           passwordIndex = Math.floor(Math.random() * (maxValue - minValue +1) + minValue); 
+        }
+        console.log(passwordIndex);
+        getPassword();
+      }
 
 
       passwordText.value = password;
 
         };
-        passwordLength();
+        passwordInput();
       }
       generatePassword();
     }
