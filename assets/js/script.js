@@ -9,7 +9,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  console.log("test");
+  
 
   // generatePassword function will present user with series of prompts 
   // for password criteria and is located within the scope of writePassword. 
@@ -18,7 +18,7 @@ function writePassword() {
 
 
   function generatePassword() {
-    console.log("generate password is called");
+    
     var passwordCharacters = [];
 
 
@@ -30,9 +30,9 @@ function writePassword() {
         if (lowercase) {
           window.alert("Lowercase letters will be added to your password.");
           var loCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-          console.log(loCase);
+          
           passwordCharacters = passwordCharacters.concat(loCase);
-          console.log(passwordCharacters);
+          
         } else {
           window.alert("Lowercase letters will not be added to your password.");
         }
@@ -43,7 +43,7 @@ function writePassword() {
             window.alert("Uppercase letters will be added to your password.");
             var upCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
             passwordCharacters = passwordCharacters.concat(upCase);
-            console.log(passwordCharacters);
+            
           } else {
             window.alert("Uppercase letters will not be added to your password.");
           }
@@ -54,7 +54,7 @@ function writePassword() {
             window.alert("Special characters will be added to your password.");
             var spChar = ["%", "!", "$", "#", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ".", "?", "@", "[", "]"]; 
             passwordCharacters = passwordCharacters.concat(spChar);
-            console.log(passwordCharacters);
+            
           } else {
             window.alert("Special characters will not be added to your password.");
           }
@@ -65,7 +65,7 @@ function writePassword() {
             window.alert("Numberss will be added to your password.");
             var num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]; 
             passwordCharacters = passwordCharacters.concat(num);
-            console.log(passwordCharacters);
+            
           } else {
             window.alert("Numbers will not be added to your password.");
           }
@@ -77,6 +77,7 @@ function writePassword() {
 
       var passwordText = document.querySelector("#password");
       var passwordIndex;
+      var password = "";
 
       for (let i =0; i < pLength; i++) {
         var maxValue = passwordCharacters.length;
@@ -84,16 +85,22 @@ function writePassword() {
         function getPassword() {
            passwordIndex = Math.floor(Math.random() * (maxValue - minValue +1) + minValue); 
         }
-        console.log(passwordCharacters[passwordIndex])
         
-        console.log();
+        
+       
         getPassword();
 
        password += (passwordCharacters[passwordIndex]); 
       }
 
-
-      // passwordText.value = password;
+      // var passwordString = JSON.stringify(password);
+      passwordText.value = password;
+      // passwordText.value = "A password";
+      
+      
+    
+   
+    
 
         };
         passwordInput();
