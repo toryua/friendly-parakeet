@@ -69,15 +69,6 @@ function writePassword() {
           } else {
             window.alert("Numbers will not be added to your password.");
           }
-
-
-
-          
-
-            
-
-
-
       } else {
         window.alert("Invalid input: Password must be between 8 and 128 characters");
         passwordInput();
@@ -93,12 +84,16 @@ function writePassword() {
         function getPassword() {
            passwordIndex = Math.floor(Math.random() * (maxValue - minValue +1) + minValue); 
         }
-        console.log(passwordIndex);
+        console.log(passwordCharacters[passwordIndex])
+        
+        console.log();
         getPassword();
+
+       password += (passwordCharacters[passwordIndex]); 
       }
 
 
-      passwordText.value = password;
+      // passwordText.value = password;
 
         };
         passwordInput();
